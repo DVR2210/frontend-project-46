@@ -4,7 +4,7 @@
   "type": "module",
   "description": "[![Actions Status](https://github.com/DVR2210/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/DVR2210/frontend-project-46/actions)",
   "main": "src/index.js",
-  "bin" : {
+  "bin": {
     "gendiff": "bin/gendiff.js"
   },
   "scripts": {
