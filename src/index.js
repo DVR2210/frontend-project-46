@@ -1,53 +1,55 @@
 
-import readFileSync from 'fs';
+import { readFileSync } from 'fs';
 import _ from 'lodash';
 
-const obj1 = {
-  "host": "hexlet.io",
-  "timeout": 50,
-  "proxy": "123.234.53.22",
-  "follow": false
-};
+const data1 = readFileSync(file1.json, 'utf-8');
+const data2 = readFileSync(file2.json, 'utf-8');
 
-const obj2 = {
-  "timeout": 20,
-  "verbose": true,
-  "host": "hexlet.io"
-};
+const obj1 = JSON.parse(data1);
+const obj2 = JSON.parse(data2);
 
+
+
+
+// const obj1 = {
+//   "host": "hexlet.io",
+//   "timeout": 50,
+//   "proxy": "123.234.53.22",
+//   "follow": false
+// };
+
+// const obj2 = {
+//   "timeout": 20,
+//   "verbose": true,
+//   "host": "hexlet.io"
+// };
 
 const gendiff = (obj1, obj2) => {
-    const result = {};
-    const keys1 = _.keys(obj1);
-    const keys2 = _.keys(obj2);
-    const keys = _.union(keys1, keys2);
-    
-    for (let key of keys) {
-      if (!_.has(obj1, key)) {
-      result[key] = 'added';
-      console.log(result)
-      
-    } else if (!_.has(obj2, key)) {
-      result[key] = 'deleted';
-      
-    } else if (obj1[key] !== obj2[key]) {
-      result[key] = 'changed';
-      
-    } else {
-      result[key] = 'unchanged';
+  const keys = new Set([...Object.keys(obj1), ...Object.keys(obj2)].sort());
+  const diff = Array.from(keys).map((key) => {
+
+    if (!obj1.hasOwnProperty(key)) {    
+      return `+ ${key}: ${obj2[key]}`;
     }
-  }
-    
 
-    return result;   
-    
-  };
+    if (!obj2.hasOwnProperty(key)) {
+      return `- ${key}: ${obj1[key]}`;
+    }
 
-  console.log(gendiff(obj1, obj2 ));
+    if (obj1[key] === obj2[key]) {
+      return ` ${key}:${obj1[key]}`;
+    }
 
+    if (obj1 !== obj2[key]) { 
+      return [`- ${key}: ${obj1[key]}`,
+             `+ ${key}: ${obj2[key]}`];
+            
+    }
+
+  });
+  return diff.flat().join('\n');
+};
+
+console.log(gendiff(obj1, obj2));
 
 export default gendiff;
-
-// const data1 = fs.readFileSync(path, 'utf-8'); // функция получает путь к фалам 
-
-// const dataPars = JSON.parse(data); // тут получаем объект 
