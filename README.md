@@ -16,4 +16,6 @@ The difference calculator is a program that determines the difference between tw
 }
 ```
 
+[![asciicast](https://asciinema.org/a/k9dzdDtGA6xTenSOaiCuFVKBa.svg)](https://asciinema.org/a/k9dzdDtGA6xTenSOaiCuFVKBa)
+
 
