@@ -39,4 +39,4 @@ const gendiff = (arg1, arg2) => {
   return result;
 };
 
-export default gendiff; 
+export default gendiff;  
