@@ -1,6 +1,6 @@
 import { test, expect } from '@jest/globals';
 import { readFileSync } from 'fs';
-import path, { dirname } from 'path';
+import path { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import genDiff from '../src/index.js';
 
