@@ -1,8 +1,9 @@
-import { test } from '@jest/globals'; // импорт джеста 
+import { test, expect } from '@jest/globals'; // импорт джеста 
 import { readFileSync } from 'fs'; // чтение файла 
-import { path } from 'path'; // модуль чтения путей 
+import path from 'path'; // модуль чтения путей 
 import { fileURLToPath } from 'url'; // функция декодирования элемнетов 
 import gendiff from '../src/index.js'; // функция итогавая сборка
+
 
 const __filename = fileURLToPath(import.meta.url); // поулчаем путь до файла - абсолютный путь? 
 const __dirname = path.dirname(__filename); // получаем название папки в которйо находимся 
