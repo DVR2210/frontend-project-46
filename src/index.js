@@ -9,25 +9,25 @@ const functionGenDiff = (obj1, obj2) => {
   const diff = Array.from(keys).map((key) => {
 
     if (!obj1.hasOwnProperty(key)) {
-      return `+ ${key}: ${obj2[key]}`;
+      return `  + ${key}: ${obj2[key]}`;
     }
 
     if (!obj2.hasOwnProperty(key)) {
-      return `- ${key}: ${obj1[key]}`;
+      return `  - ${key}: ${obj1[key]}`;
     }
 
     if (obj1[key] === obj2[key]) {
-      return ` ${key}:${obj1[key]}`;
+      return `    ${key}: ${obj1[key]}`;
     }
 
     if (obj1 !== obj2[key]) {
-      return [`- ${key}: ${obj1[key]}`,
-      `+ ${key}: ${obj2[key]}`];
+      return [`  - ${key}: ${obj1[key]}`,
+      `  + ${key}: ${obj2[key]}`];
 
     }
 
   });
-  return `${"{"}\n ${diff.flat().join('\n')}\n${"}"}`;
+  return `${"{"}\n${diff.flat().join('\n')}\n${"}"}`;
 };
 
 const gendiff = (arg1, arg2) => {
