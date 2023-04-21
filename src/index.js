@@ -27,7 +27,7 @@ const functionGenDiff = (obj1, obj2) => {
     }
 
   });
-  return diff.flat().join('\n');
+  return `${"{"}\n ${diff.flat().join('\n')}\n${"}"}`;
 };
 
 const gendiff = (arg1, arg2) => {
