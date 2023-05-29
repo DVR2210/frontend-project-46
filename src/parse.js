@@ -1,6 +1,6 @@
 import yaml from 'js-yaml';
 
-export default (file, extension) => {
+export defaultS (file, extension) => {
   switch (extension) {
     case 'json':
       return JSON.parse(file);
