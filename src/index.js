@@ -1,8 +1,10 @@
 import { readFileSync } from 'fs';
+import yaml from 'js-yaml';
 
 const fileContent = (file) => readFileSync(file, 'utf-8');
 
-const fileContenPars = (dataPars) => JSON.parse(dataPars);
+//const fileContenPars = (dataPars) => JSON.parse(dataPars);
+const fileContenPars = (dataPars) => yaml.load(dataPars);
 
 const functionGenDiff = (obj1, obj2) => {
   const keys = new Set([...Object.keys(obj1), ...Object.keys(obj2)].sort());
@@ -39,5 +41,4 @@ const gendiff = (arg1, arg2) => {
   return result;
 };
 
-export default gendiff;  
-
+export default gendiff;
