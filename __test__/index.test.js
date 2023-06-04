@@ -4,11 +4,11 @@ import path from 'path'; // модуль чтения путей
 import { fileURLToPath } from 'url'; // функция декодирования элемнетов 
 import genDiff from '../src/index.js'; // функция итогавая сборка
 
-
-const __filename = fileURLToPath(import.meta.url); // поулчаем путь до файла - абсолютный путь? 
-const __dirname = path.dirname(__filename); // получаем название папки в которйо находимся 
-
-const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename); // метод джоин генирирует путь 
+const getFixturePath = (file) => {
+    const __filename = fileURLToPath(import.meta.url); // поулчаем путь до файла - абсолютный путь? 
+    const __dirname = path.dirname(__filename); // получаем название папки в которйо находимся 
+    return path.join(__dirname, '..', '__fixtures__', file); // метод джоин генирирует путь 
+};
 
 
 test('file json', () => {
