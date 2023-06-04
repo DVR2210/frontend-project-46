@@ -2,7 +2,7 @@ import { test, expect } from '@jest/globals'; // импорт джеста
 import { readFileSync } from 'fs'; // чтение файла 
 import path from 'path'; // модуль чтения путей 
 import { fileURLToPath } from 'url'; // функция декодирования элемнетов 
-import gendiff from '../src/index.js'; // функция итогавая сборка
+import genDiff from '../src/index.js'; // функция итогавая сборка
 
 
 const __filename = fileURLToPath(import.meta.url); // поулчаем путь до файла - абсолютный путь? 
@@ -16,7 +16,7 @@ test('file json', () => {
    const filename2 = getFixturePath('file2.json');
     const resultName = getFixturePath('file_result.txt');
     const result = readFileSync(resultName, 'utf8');
-    expect(gendiff(filename1, filename2)).toBe(result);
+    expect(genDiff(filename1, filename2)).toEqual(result);
 });
 
 test('file yaml', () => {
@@ -24,7 +24,7 @@ test('file yaml', () => {
     const filename2 = getFixturePath('file2.yaml');
     const resultName = getFixturePath('file_result.txt');
     const result = readFileSync(resultName, 'utf8');
-    expect(gendiff(filename1, filename2)).toBe(result);
+    expect(genDiff(filename1, filename2)).toEqual(result);
 });
 
 test('file yml', () => {
@@ -32,5 +32,5 @@ test('file yml', () => {
     const filename2 = getFixturePath('file2.yml');
     const resultName = getFixturePath('file_result.txt');
     const result = readFileSync(resultName, 'utf8');
-    expect(gendiff(filename1, filename2)).toBe(result);
+    expect(genDiff(filename1, filename2)).toEqual(result);
 });
