@@ -1,13 +1,13 @@
-import { test, expect } from '@jest/globals'; // импорт джеста 
-import { readFileSync } from 'fs'; // чтение файла 
-import path from 'path'; // модуль чтения путей 
-import { fileURLToPath } from 'url'; // функция декодирования элемнетов 
-import genDiff from '../src/index.js'; // функция итогавая сборка
+import { test, expect } from '@jest/globals'; 
+import { readFileSync } from 'fs'; 
+import path from 'path'; 
+import { fileURLToPath } from 'url'; 
+import genDiff from '../src/index.js'; 
 
 const getFixturePath = (file) => {
-    const __filename = fileURLToPath(import.meta.url); // поулчаем путь до файла - абсолютный путь? 
-    const __dirname = path.dirname(__filename); // получаем название папки в которйо находимся 
-    return path.join(__dirname, '..', '__fixtures__', file); // метод джоин генирирует путь 
+    const __filename = fileURLToPath(import.meta.url); 
+    const __dirname = path.dirname(__filename); 
+    return path.join(__dirname, '..', '__fixtures__', file); 
 };
 
 
@@ -34,3 +34,15 @@ test('file yml', () => {
     const result = readFileSync(resultName, 'utf8');
     expect(genDiff(filename1, filename2)).toEqual(result);
 });
+
+// test('testin plain format ', () => {
+
+// });
+
+test('plain', () => {
+    const filename1 = getFixturePath('file1.yml');
+    const filename2 = getFixturePath('file2.yml');
+    const resultName = getFixturePath('file_result_plain.txt');
+    const result = readFileSync(resultName, 'utf8');
+    expect(genDiff(filename1, filename2, 'plain')).toEqual(result);
+  });
