@@ -25,4 +25,5 @@ const buildTree = (object1, object2) => {
   });
   return tree;
 };
+
 export default buildTree;

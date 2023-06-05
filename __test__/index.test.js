@@ -10,7 +10,6 @@ const getFixturePath = (file) => {
     return path.join(__dirname, '..', '__fixtures__', file); 
 };
 
-
 test('file json', () => {
    const filename1 = getFixturePath('file1.json');
    const filename2 = getFixturePath('file2.json');
@@ -34,10 +33,6 @@ test('file yml', () => {
     const result = readFileSync(resultName, 'utf8');
     expect(genDiff(filename1, filename2)).toEqual(result);
 });
-
-// test('testin plain format ', () => {
-
-// });
 
 test('plain', () => {
     const filename1 = getFixturePath('file1.yml');
