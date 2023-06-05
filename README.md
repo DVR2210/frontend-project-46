@@ -99,7 +99,16 @@
 
 ### LAUNCH EXAMPLE
 
-Difference calculation between two flat JSON files and JSON  files. 
+1. Difference calculation between two flat JSON files and JSON  files. 
 [![asciicast](https://asciinema.org/a/k9dzdDtGA6xTenSOaiCuFVKBa.svg)](https://asciinema.org/a/k9dzdDtGA6xTenSOaiCuFVKBa)
+
+2. Difference calculation between two JSON files, default format (stylish).
+[![asciicast](https://asciinema.org/a/ZmWyGBG3kG6tqsnickU4xShRC.svg)](https://asciinema.org/a/ZmWyGBG3kG6tqsnickU4xShRC)
+
+3. Difference calculation between two YAML files, format plain.
+[![asciicast](https://asciinema.org/a/ONNItkV42sEwhgfdr8QpRe0cq.svg)](https://asciinema.org/a/ONNItkV42sEwhgfdr8QpRe0cq)
+
+4. Difference calculation between two YAML files, format json.
+[![asciicast](https://asciinema.org/a/BOigaftHcSpwUXlJZgS0xt9IP.svg)](https://asciinema.org/a/BOigaftHcSpwUXlJZgS0xt9IP)
 
 
