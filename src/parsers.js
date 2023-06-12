@@ -1,13 +1,13 @@
-import YAML from 'js-yaml';
+import ymal from 'js-yaml';
 
 const parse = (data, format) => {
   switch (format) {
     case 'json':
       return JSON.parse(data);
     case 'yml':
-      return YAML.load(data);
+      return ymal.load(data);
     case 'yaml':
-      return YAML.load(data);
+      return ymal.load(data);
     default:
       throw new Error(`Invalid format: ${format}`);
   }
