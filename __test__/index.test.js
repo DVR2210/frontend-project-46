@@ -166,3 +166,4 @@ Property 'group3' was added with value: [complex value]`);
     expect(() => genDiff(ymlPath1, ymlPath2, 'md')).toThrow();
   });
 });
+
