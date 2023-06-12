@@ -8,7 +8,7 @@
     "gendiff": "bin/gendiff.js"
   },
   "scripts": {
-    "test":  "node --experimental-vm-modules node_modules/.bin/jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --bail --coverage"
   },
   "author": "",
   "license": "ISC",
