@@ -1,1 +1,1 @@
-NODE_OPTIONS=--experimental-vm-modules
+node-options=--experimental-vm-modules --no-warnings
