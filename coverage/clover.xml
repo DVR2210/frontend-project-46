@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1686583906097" clover="3.2.0">
-  <project timestamp="1686583906097" name="All files">
-    <metrics statements="71" coveredstatements="67" conditionals="44" coveredconditionals="39" methods="21" coveredmethods="21" elements="136" coveredelements="127" complexity="0" loc="71" ncloc="71" packages="2" files="7" classes="7"/>
+<coverage generated="1687159645777" clover="3.2.0">
+  <project timestamp="1687159645777" name="All files">
+    <metrics statements="74" coveredstatements="70" conditionals="41" coveredconditionals="37" methods="21" coveredmethods="21" elements="136" coveredelements="128" complexity="0" loc="74" ncloc="74" packages="2" files="7" classes="7"/>
     <package name="src">
       <metrics statements="31" coveredstatements="30" conditionals="15" coveredconditionals="14" methods="7" coveredmethods="7"/>
       <file name="buildTree.js" path="/home/admin1/frontend-project-46/src/buildTree.js">
@@ -49,7 +49,7 @@
       </file>
     </package>
     <package name="src.formatter">
-      <metrics statements="40" coveredstatements="37" conditionals="29" coveredconditionals="25" methods="14" coveredmethods="14"/>
+      <metrics statements="43" coveredstatements="40" conditionals="26" coveredconditionals="23" methods="14" coveredmethods="14"/>
       <file name="index.js" path="/home/admin1/frontend-project-46/src/formatter/index.js">
         <metrics statements="6" coveredstatements="5" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
         <line num="4" count="1" type="stmt"/>
@@ -79,25 +79,28 @@
         <line num="28" count="3" type="stmt"/>
       </file>
       <file name="stylish.js" path="/home/admin1/frontend-project-46/src/formatter/stylish.js">
-        <metrics statements="18" coveredstatements="17" conditionals="12" coveredconditionals="10" methods="6" coveredmethods="6"/>
-        <line num="3" count="252" type="cond" truecount="2" falsecount="0"/>
-        <line num="5" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="6" count="162" type="cond" truecount="2" falsecount="0"/>
-        <line num="7" count="120" type="stmt"/>
-        <line num="9" count="54" type="stmt"/>
-        <line num="10" count="42" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="13" count="6" type="cond" truecount="1" falsecount="0"/>
-        <line num="14" count="30" type="stmt"/>
-        <line num="15" count="108" type="cond" truecount="5" falsecount="1"/>
-        <line num="17" count="24" type="stmt"/>
-        <line num="19" count="30" type="stmt"/>
-        <line num="21" count="12" type="stmt"/>
-        <line num="23" count="18" type="stmt"/>
+        <metrics statements="21" coveredstatements="20" conditionals="9" coveredconditionals="8" methods="6" coveredmethods="6"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="252" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="162" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="120" type="stmt"/>
+        <line num="13" count="42" type="stmt"/>
+        <line num="15" count="54" type="stmt"/>
+        <line num="16" count="42" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="22" count="30" type="stmt"/>
+        <line num="23" count="108" type="cond" truecount="5" falsecount="1"/>
         <line num="25" count="24" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="30" count="30" type="stmt"/>
-        <line num="32" count="6" type="stmt"/>
+        <line num="27" count="30" type="stmt"/>
+        <line num="29" count="12" type="stmt"/>
+        <line num="31" count="18" type="stmt"/>
+        <line num="33" count="24" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="38" count="30" type="stmt"/>
+        <line num="40" count="6" type="stmt"/>
       </file>
     </package>
   </project>
