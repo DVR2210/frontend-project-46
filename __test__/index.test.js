@@ -1,6 +1,7 @@
 import { readFileSync } from 'fs';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { test, expect } from '@jest/globals';
 import genDiff from '../src/index.js';
 
 const __filename = fileURLToPath(import.meta.url);

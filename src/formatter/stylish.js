@@ -16,7 +16,6 @@ const stringify = (value, depth) => {
   return `{\n${lines.join('\n')}\n${genIndent(depth)}  }`;
 };
 
-
 const stylish = (tree) => {
   const iter = (node, depth = 1) => {
     const result = node.map((item) => {
@@ -28,7 +27,7 @@ const stylish = (tree) => {
         case 'deleted':
           return `${genIndent(depth)}- ${item.name}: ${stringify(item.value, depth)}`;
         case 'unchanged':
-          return `${genIndent(depth)} ${item.name}: ${stringify(item.value, depth)}`;
+          return `${genIndent(depth)}  ${item.name}: ${stringify(item.value, depth)}`;
         case 'changed':
           return `${genIndent(depth)}- ${item.name}: ${stringify(item.value1, depth)}\n${genIndent(depth)}+ ${item.name}: ${stringify(item.value2, depth)}`;
         default:
