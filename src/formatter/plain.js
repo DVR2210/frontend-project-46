@@ -1,30 +1,52 @@
 import _ from 'lodash';
 
-const getName = (item) => item.name;
-const getChildren = (item) => item.children;
-const isValue = (value) => (_.isObject(value) ? '[complex value]' : value);
-const isString = (item) => (_.isString(item) && item !== '[complex value]' ? `'${item}'` : item);
-
-const plain = (tree) => {
-  const iter = (node, name = '') => {
-    const result = node.flatMap((item) => {
-      switch (item.status) {
-        case 'added':
-          return `Property '${name + getName(item)}' was added with value: ${isString(isValue(item.value))}`;
-        case 'deleted':
-          return `Property '${name + getName(item)}' was removed`;
-        case 'unchanged':
-          return [];
-        case 'changed':
-          return `Property '${name + getName(item)}' was updated. From ${isString(isValue(item.value1))} to ${isString(isValue(item.value2))}`;
-        case 'nested':
-          return iter(getChildren(item), `${name + getName(item)}.`);
-        default:
-          throw new Error('Invalid format');
-      }
-    });
-    return result.join('\n');
-  };
-  return iter(tree);
+const getValue = (value) => {
+  switch (typeof value) {
+    case 'object': {
+      return !value ? 'null' : '[complex value]';
+    }
+    case 'string': {
+      return `'${value}'`;
+    }
+    default: {
+      return `${value}`;
+    }
+  }
 };
-export default plain;
+const getPath = (nodeNames) => nodeNames.flat().join('.');
+
+export function makePlainDiff(tree) {
+  const iter = (node, path) => node.map((child) => {
+    const currentPath = getPath([path, child.key]);
+    switch (child.type) {
+      case 'nested': {
+        return iter(child.children, currentPath);
+      }
+      case 'added': {
+        return `Property '${currentPath}' was added with value: ${getValue(child.value)}`;
+      }
+      case 'removed': {
+        return `Property '${currentPath}' was removed`;
+      }
+      case 'changed': {
+        return `Property '${currentPath}' was updated. From ${getValue(child.value)} to ${getValue(child.value2)}`;
+      }
+      case 'unchanged': {
+        return null;
+      }
+      default: {
+        throw Error('Uncorrect data');
+      }
+    }
+  });
+  return iter(tree.children, []);
+}
+
+const makePlain = (data) => {
+  const result = makePlainDiff(data);
+  const flatten = _.flattenDeep(result);
+  const filtered = flatten.filter((el) => el);
+  return filtered.join('\n');
+};
+
+export default makePlain;
