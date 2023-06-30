@@ -1,16 +1,18 @@
-import stylish from './stylish.js';
+import makeStylish from './stylish.js';
 import plain from './plain.js';
+import json from './json.js';
 
-const formatter = (data, format) => {
+const formatter = (tree, format) => {
   switch (format) {
     case 'stylish':
-      return stylish(data);
+      return makeStylish(tree);
     case 'plain':
-      return plain(data);
+      return plain(tree);
     case 'json':
-      return JSON.stringify(data, null, ' ');
+      return json(tree);
     default:
-      throw new Error(`Invalid format: ${format}`);
+      throw new Error(`Error: ${format} - this format is not supported. Available formats: stylish, plain, json`);
   }
 };
+
 export default formatter;
